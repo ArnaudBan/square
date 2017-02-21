@@ -48,3 +48,15 @@ function ab_square_setup() {
     // Indicate widget sidebars can use selective refresh in the Customizer.
     add_theme_support( 'customize-selective-refresh-widgets' );
 }
+
+function ab_square_enqueue_scripts() {
+
+    // Css
+    wp_enqueue_style( 'ab_square', get_template_directory_uri() . '/css/screen.min.css', array(), '20170220' );
+
+    // Js
+    wp_enqueue_script( 'webfontloader', 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js', array(), '1', true);
+    wp_enqueue_script( 'ab_square-scripts', get_template_directory_uri() . '/minjs/scripts.min.js', array( 'webfontloader' ), '20170220', true);
+
+}
+add_action( 'wp_enqueue_scripts', 'ab_square_enqueue_scripts' );
