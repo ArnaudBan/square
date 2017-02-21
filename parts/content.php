@@ -9,7 +9,7 @@
 
     <a href="<?php the_permalink() ?>">
         <?php
-        the_title( '<h2 class="entry-title">', '<h2>');
+        the_title( '<h2 class="entry-title">', '</h2>');
         ?>
     </a>
 

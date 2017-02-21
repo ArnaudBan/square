@@ -21,11 +21,12 @@
 
 
     <header id="masthead" class="site-header" role="banner">
+
         <div class="site-branding">
             <?php
 
             if ( is_front_page() && is_home() ) : ?>
-                <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
             <?php else : ?>
                 <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
             <?php endif;
@@ -36,6 +37,17 @@
             <?php endif;
             ?>
         </div>
+
+
+        <?php
+        wp_nav_menu(array(
+            'theme_location' => 'primary',
+            'menu_class'     => 'top-menu',
+            'depth'          => 1,
+            'container'      => 'nav',
+            'container_class' => 'top-menu-container'
+        ));
+        ?>
     </header>
 
 

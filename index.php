@@ -5,12 +5,18 @@
 
 get_header();
 
-while ( have_posts() ){
+if( have_posts() ){
 
-    the_post();
+    while ( have_posts() ){
 
-    get_template_part( 'parts/content', get_post_type() );
+        the_post();
 
+        get_template_part( 'parts/content', get_post_type() );
+
+    }
+
+    the_posts_pagination();
 }
+
 
 get_footer();
