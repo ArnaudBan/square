@@ -22,6 +22,17 @@
 
     <header id="masthead" class="site-header" role="banner">
 
+        <?php
+        wp_nav_menu(array(
+            'theme_location'    => 'primary',
+            'menu_class'        => 'top-menu',
+            'depth'             => 1,
+            'container'         => 'nav',
+            'container_class'   => 'top-menu-container',
+            'container_id'      => 'top-menu',
+        ));
+        ?>
+
         <div class="site-branding">
             <?php
 
@@ -39,15 +50,14 @@
         </div>
 
 
-        <?php
-        wp_nav_menu(array(
-            'theme_location' => 'primary',
-            'menu_class'     => 'top-menu',
-            'depth'          => 1,
-            'container'      => 'nav',
-            'container_class' => 'top-menu-container'
-        ));
-        ?>
+        <a class="menu-toggle" href="#top-menu">
+            <svg id="burger" width="30" height="30" class="openmenu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                <line class="top" x1="0" y1="8" x2="30" y2="8" stroke-width="2" vector-effect="non-scaling-stroke"/>
+                <line class="mid" x1="0" y1="15" x2="30" y2="15" stroke-width="2" vector-effect="non-scaling-stroke"/>
+                <line class="bottom" x1="0" y1="22" x2="30" y2="22" stroke-width="2" vector-effect="non-scaling-stroke"/>
+            </svg>
+        </a>
+
     </header>
 
 
