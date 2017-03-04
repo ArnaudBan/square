@@ -27,10 +27,18 @@ function ab_square_setup() {
      */
     add_theme_support( 'post-thumbnails' );
 
+    add_theme_support( 'custom-logo', array(
+        'height'      => 170,
+        'width'       => 200,
+        'flex-height' => true,
+        'flex-width'  => true,
+        'header-text' => array( 'site-title', 'site-description' ),
+    ) );
+
 
     // This theme uses wp_nav_menu() in two locations.
     register_nav_menus( array(
-        'primary' => __( 'Primary Menu', 'twentysixteen' ),
+        'primary' => __( 'Primary Menu', 'square' ),
     ) );
 
     /*

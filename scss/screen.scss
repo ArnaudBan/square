@@ -6,6 +6,13 @@
 
 $green : #008085;
 $red : #f44336;
+$bg-color: #dde0d7;
+
+// My reset
+
+h1, h2, h3, h4, h5, h6, p, ul, ol{
+    margin: 0 0 1em;
+}
 
 // layout
 
@@ -14,6 +21,55 @@ html{
     font-family: 'Roboto', sans-serif;
 }
 
+// Header
+
+.site-branding,
+.contact-information{
+    padding: 4vw;
+
+    p:last-child{
+        margin: 0;
+    }
+}
+
+.site-branding{
+    background-color: $bg-color;
+
+    .site-title{
+        margin: 0;
+    }
+
+    .custom-logo{
+        max-height: 200px;
+        width: auto;
+        display: block;
+        margin-bottom: 1em;
+    }
+
+    .site-description{
+        font-size: 18 / 16 + 0em;
+        text-transform: uppercase;
+    }
+}
+
+.contact-information{
+    background-color: $green;
+    color: #fff;
+}
+
+@media (min-width: 50em) {
+
+    .site-header{
+        display: flex;
+    }
+    .site-branding{
+        flex-basis: 78%;
+    }
+    .contact-information{
+        flex-basis: 22%;
+        padding-top: calc(5vw + 7.5em);
+    }
+}
 
 // Menu
 
@@ -71,8 +127,8 @@ html{
 
 #top-menu{
     background-color: $red;
-    min-width: 19vw;
-    padding: 2vw;
+    min-width: 22%;
+    padding: 2vw 4vw;
 
     .top-menu{
         margin: 0;

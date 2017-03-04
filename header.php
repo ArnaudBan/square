@@ -35,12 +35,23 @@
 
         <div class="site-branding">
             <?php
+            $logo = get_custom_logo();
 
-            if ( is_front_page() && is_home() ) : ?>
-                <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-            <?php else : ?>
-                <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-            <?php endif;
+            if( $logo ){
+
+                echo $logo;
+
+            } else {
+
+                if ( is_front_page() && is_home() ) : ?>
+                    <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+                <?php else : ?>
+                    <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+                <?php endif;
+
+            }
+
+
 
             $description = get_bloginfo( 'description', 'display' );
             if ( $description || is_customize_preview() ) : ?>
@@ -49,6 +60,9 @@
             ?>
         </div>
 
+        <div class="contact-information">
+            
+        </div>
 
         <a class="menu-toggle" href="#top-menu">
             <svg id="burger" width="30" height="30" class="openmenu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
