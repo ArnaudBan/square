@@ -27,6 +27,9 @@ function ab_square_setup() {
      */
     add_theme_support( 'post-thumbnails' );
 
+    set_post_thumbnail_size( 390, 180, true );
+
+
     add_theme_support( 'custom-logo', array(
         'height'      => 170,
         'width'       => 200,

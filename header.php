@@ -61,7 +61,7 @@
         </div>
 
         <div class="contact-information">
-            
+
         </div>
 
         <a class="menu-toggle" href="#top-menu">

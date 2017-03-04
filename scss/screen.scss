@@ -7,6 +7,10 @@
 $green : #008085;
 $red : #f44336;
 $bg-color: #dde0d7;
+$color-bg-color: #f0eee1;
+
+$font-dark : #333333;
+$font-light : #6a6969;
 
 // My reset
 
@@ -14,11 +18,21 @@ h1, h2, h3, h4, h5, h6, p, ul, ol{
     margin: 0 0 1em;
 }
 
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+a{
+    color: $red;
+}
+
 // layout
 
 html{
-    background-color: #fff;
     font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+    color: $font-light;
 }
 
 // Header
@@ -49,6 +63,7 @@ html{
     .site-description{
         font-size: 18 / 16 + 0em;
         text-transform: uppercase;
+        color: $font-dark;
     }
 }
 
@@ -85,6 +100,7 @@ html{
     background-color: $green;
     transition: background-color 300ms;
     position: fixed;
+    z-index: 101;
     top: 2vw;
     right: 2vw;
 
@@ -150,6 +166,7 @@ html{
 
     .js &{
         position: fixed;
+        z-index: 100;
         top: 0;
         right: 0;
         height: 100vh;
@@ -165,5 +182,87 @@ html{
     &.open{
         display: block;
         transform: translateX( 0% );
+    }
+}
+
+// Post/default grid
+.post-grid{
+    background-color: $color-bg-color;
+
+    .hentry{
+        padding: 2em 5%;
+        position: relative;
+        transition: background-color 666ms, color 666ms;
+        max-width: 500px;
+        margin: 0 auto;
+
+        &:hover{
+            background-color: $red;
+            color: #fff;
+        }
+    }
+
+    .entry-link{
+        text-decoration: none;
+        color: $font-dark;
+        transition: color 666ms;
+
+        &::after{
+            content: ' ';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        &:hover,
+        &:focus{
+            color: #fff;
+        }
+    }
+
+    .entry-title{
+        font-size: 24 / 16 + 0em;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 0.3em;
+    }
+
+    .entry-date{
+        font-size: 12 /16 + 0em;
+        margin-bottom: 1.2em;
+    }
+
+    .wp-post-image{
+        display: block;
+        margin-bottom: 1.3em;
+    }
+
+    .entry-content{
+        padding: 0 3%;
+        font-size: 12 / 16 + 0em;
+        text-transform: uppercase;
+
+        p:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+    @media (min-width: 40em) {
+        display: flex;
+        flex-wrap: wrap;
+
+        .hentry{
+            flex-basis: 50%;
+            min-height: 50vw;
+            box-sizing: border-box;
+        }
+    }
+    @media (min-width: 56em) {
+        .hentry {
+            flex-basis: 33.33%;
+            min-height: 33.33vw;
+        }
     }
 }
