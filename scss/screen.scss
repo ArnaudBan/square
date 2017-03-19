@@ -303,6 +303,7 @@ html{
 
 .navigation{
     padding: 2em 5%;
+    background-color: $bg-color;
 }
 
 .nav-links{
@@ -325,4 +326,11 @@ html{
     &:focus{
         background-color: $red;
     }
+}
+
+// site-footer
+
+.site-footer{
+    padding: 2em 5%;
+    text-align: right;
 }

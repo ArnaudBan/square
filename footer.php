@@ -10,7 +10,15 @@
             </div><!-- .site-content -->
 
             <footer id="colophon" class="site-footer" role="contentinfo">
+                <?php
+                $logo = get_custom_logo();
 
+                if( $logo ){
+
+                echo $logo;
+
+                }
+                ?>
             </footer><!-- .site-footer -->
         </div><!-- .site-inner -->
     </div><!-- .site -->
