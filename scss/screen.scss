@@ -442,7 +442,7 @@ body.blog{
 // navigation
 
 .navigation{
-    padding: 2em 5%;
+    padding: 3em 5%;
 }
 
 .nav-links{
@@ -451,19 +451,16 @@ body.blog{
 
 .page-numbers{
     display: inline-block;
-    line-height: 2em;
-    min-width: 2em;
-    background-color: $green;
-    color: #fff;
     text-decoration: none;
     padding: 0 .5em;
-    box-sizing: border-box;
-    transition: background-color 300ms;
+    transition: color 300ms;
+    color: $font-light;
+    font-size: 14 / 16 + 0em;
 
     &.current,
     &:hover,
     &:focus{
-        background-color: $red;
+        color: $red;
     }
 }
 
