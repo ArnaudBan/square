@@ -217,6 +217,67 @@ html{
 }
 
 // Post/default grid
+.archive-page-header{
+    color: #fff;
+
+    @media (min-width: 40em) {
+        display: flex;
+        flex-wrap: wrap;
+
+        .archive-title-wrapper{
+            flex-basis: 33.33%;
+            min-height: 33.33vw;
+            box-sizing: border-box;
+        }
+
+
+        .archive-description-wrapper{
+            flex-basis: 66.66%;
+            min-height: 33.33vw;
+            box-sizing: border-box;
+        }
+
+        .archive-title{
+            margin-top: 62%;
+        }
+    }
+
+    @media (min-width: 56em) {
+        .archive-title{
+            font-size: 30 / 16 + 0em;
+        }
+    }
+}
+
+.archive-title-wrapper{
+    padding: 2em 5%;
+    background-color: $red;
+    overflow: hidden;
+
+}
+
+.archive-title{
+    font-size: 22 / 16 + 0em;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 400;
+
+    &:before{
+        content: '';
+        width: 1.5em;
+        border-top: 2px solid #fff;
+        display: block;
+        position: absolute;
+        top: -0.3em;
+        left: 0;
+    }
+}
+
+.archive-description-wrapper{
+    padding: 2em 5%;
+    background-color: #f5554a;
+}
+
 .post-grid{
     background-color: $color-bg-color;
 
