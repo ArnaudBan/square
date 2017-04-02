@@ -7,7 +7,6 @@ get_header();
 
 if( have_posts() ){
 
-
     $archive_tite = get_the_archive_title();
     $archive_description =  get_the_archive_description();
     ?>
@@ -21,8 +20,11 @@ if( have_posts() ){
         </div>
     </div>
     <?php
-
-    echo '<div class="post-grid">';
+    $archive_class = 'post-grid';
+    if( is_post_type_archive('project') || is_tax('offer') ){
+        $archive_class = 'project-grid';
+    }
+    echo "<div class='$archive_class'>";
 
     while ( have_posts() ){
 

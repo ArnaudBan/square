@@ -278,17 +278,15 @@ html{
     background-color: #f5554a;
 }
 
-.post-grid{
-    background-color: $color-bg-color;
+body.archive,
+body.blog{
 
-    .hentry{
-        padding: 2em 5%;
+    .hentry {
         position: relative;
         transition: background-color 666ms, color 666ms;
-        max-width: 500px;
         margin: 0 auto;
 
-        &:hover{
+        &:hover {
             background-color: $red;
             color: #fff;
         }
@@ -316,11 +314,21 @@ html{
 
     .entry-title{
         font-size: 24 / 16 + 0em;
-        font-weight: bold;
         text-transform: uppercase;
         margin-bottom: 0.3em;
     }
+}
+.post-grid{
+    background-color: $color-bg-color;
 
+    .hentry{
+        padding: 2em 5%;
+        max-width: 500px;
+    }
+
+    .entry-title{
+        font-weight: bold;
+    }
     .entry-date{
         font-size: 12 /16 + 0em;
         margin-bottom: 1.2em;
@@ -359,12 +367,82 @@ html{
     }
 }
 
+// Project
+.project-grid{
+    text-transform: uppercase;
+    font-weight: 300;
+
+    .entry-title{
+        font-weight: 300;
+    }
+    .project-content-wrapper{
+        padding: 2em 5%;
+    }
+
+    .attachment-square{
+        display: block;
+    }
+
+    .project-meta,
+    .project-offers-list{
+        font-size: 12 / 16 + 0em;
+    }
+
+    .project-offers-list{
+        margin-bottom: 1em;
+        color: $red;
+        transition: color 666ms;
+    }
+    .hentry:hover .project-offers-list{
+        color: #fff;
+    }
+    .project-meta p{
+        margin-bottom: 0.2em;
+    }
+    .meta-label{
+        font-weight: 700;
+    }
+
+    @media (min-width: 40em) {
+        .hentry{
+            display: flex;
+            align-items: center;
+
+            &:nth-child(odd){
+                flex-direction: row-reverse;
+            }
+        }
+
+        .project-content-wrapper,
+        .thumbnail-wrapper{
+            flex-basis: 50%;
+            box-sizing: border-box;
+        }
+
+    }
+    @media (min-width: 62em) {
+        display: flex;
+        flex-wrap: wrap;
+
+        .hentry{
+            flex-basis: 50%;
+
+            &:nth-child(odd){
+                flex-direction: row;
+            }
+
+            &:nth-child( 3n + 3 ),
+            &:nth-child( 4n + 4 ){
+                flex-direction: row-reverse;
+            }
+        }
+    }
+}
 
 // navigation
 
 .navigation{
     padding: 2em 5%;
-    background-color: $bg-color;
 }
 
 .nav-links{
@@ -394,4 +472,5 @@ html{
 .site-footer{
     padding: 2em 5%;
     text-align: right;
+    background-color: $bg-color;
 }
