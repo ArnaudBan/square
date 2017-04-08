@@ -61,7 +61,7 @@
         </div>
 
         <div class="contact-information">
-
+            <?php ab_square_display_social_media(); ?>
         </div>
 
         <a class="menu-toggle" href="#top-menu">

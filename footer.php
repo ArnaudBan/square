@@ -11,6 +11,9 @@
 
             <footer id="colophon" class="site-footer" role="contentinfo">
                 <?php
+
+                ab_square_display_social_media();
+
                 $logo = get_custom_logo();
 
                 if( $logo ){

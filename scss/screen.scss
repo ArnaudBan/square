@@ -216,6 +216,38 @@ html{
     }
 }
 
+
+.icon{
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+}
+
+.social-media-menu{
+    font-size: 25 / 16 + 0em;
+
+    .social-link{
+        display: inline-block;
+        color: #fff;
+        opacity: 0.6;
+        transition: opacity 300ms;
+        margin-right: 0.2em;
+
+        &:focus,
+        &:hover{
+            opacity: 1;
+        }
+    }
+
+    .site-footer &{
+
+        .social-link{
+            color: $font-dark;
+        }
+    }
+}
+
+
 // Post/default grid
 .archive-page-header{
     color: #fff;
