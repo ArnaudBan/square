@@ -400,20 +400,13 @@ body.blog{
 }
 
 // Project
-.project-grid{
-    text-transform: uppercase;
-    font-weight: 300;
+.project{
 
-    .entry-title{
+    .entry-title {
         font-weight: 300;
-    }
-    .project-content-wrapper{
-        padding: 2em 5%;
+        text-transform: uppercase;
     }
 
-    .attachment-square{
-        display: block;
-    }
 
     .project-meta,
     .project-offers-list{
@@ -425,14 +418,33 @@ body.blog{
         color: $red;
         transition: color 666ms;
     }
-    .hentry:hover .project-offers-list{
-        color: #fff;
-    }
+
     .project-meta p{
         margin-bottom: 0.2em;
     }
     .meta-label{
         font-weight: 700;
+    }
+}
+
+.project-grid{
+    text-transform: uppercase;
+    font-weight: 300;
+
+    .project-content-wrapper{
+        padding: 2em 5%;
+    }
+
+    .attachment-square{
+        display: block;
+    }
+
+
+    .project-offers-list{
+        transition: color 666ms;
+    }
+    .hentry:hover .project-offers-list{
+        color: #fff;
     }
 
     @media (min-width: 40em) {
@@ -467,6 +479,44 @@ body.blog{
             &:nth-child( 4n + 4 ){
                 flex-direction: row-reverse;
             }
+        }
+    }
+}
+
+// Single
+.single-container {
+
+    .entry-header{
+        margin-bottom: 2em;
+    }
+
+    .entry-title {
+        font-size: 30 / 16 + 0em;
+        margin-bottom: 0.2em;
+    }
+
+    .project-meta,
+    .project-offers-list{
+        font-size: 14 / 16 + 0em;
+    }
+
+    .hentry{
+        padding: 3em 5%;
+        max-width: 770 / 16 + 0em;
+        margin: 0 0 0 auto;
+    }
+
+    @media (min-width: 40em) {
+        display: flex;
+
+        .hentry-container{
+            flex-basis: 70%;
+        }
+        .site-sidebar{
+            flex-basis: 30%;
+        }
+        .hentry {
+            padding: 3em 8%;
         }
     }
 }
