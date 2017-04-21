@@ -310,20 +310,7 @@ html{
     background-color: #f5554a;
 }
 
-body.archive,
-body.blog{
-
-    .hentry {
-        position: relative;
-        transition: background-color 666ms, color 666ms;
-        margin: 0 auto;
-
-        &:hover {
-            background-color: $red;
-            color: #fff;
-        }
-    }
-
+.hentry{
     .entry-link{
         text-decoration: none;
         color: $font-dark;
@@ -349,18 +336,7 @@ body.blog{
         text-transform: uppercase;
         margin-bottom: 0.3em;
     }
-}
-.post-grid{
-    background-color: $color-bg-color;
 
-    .hentry{
-        padding: 2em 5%;
-        max-width: 500px;
-    }
-
-    .entry-title{
-        font-weight: bold;
-    }
     .entry-date{
         font-size: 12 /16 + 0em;
         margin-bottom: 1.2em;
@@ -371,7 +347,7 @@ body.blog{
         margin-bottom: 1.3em;
     }
 
-    .entry-content{
+    &.post .entry-content{
         padding: 0 3%;
         font-size: 12 / 16 + 0em;
         text-transform: uppercase;
@@ -380,6 +356,32 @@ body.blog{
             margin-bottom: 0;
         }
     }
+}
+
+.post-grid,
+.project-grid,
+.site-sidebar{
+
+    .hentry {
+        position: relative;
+        transition: background-color 666ms, color 666ms;
+        margin: 0 auto;
+
+        &:hover {
+            background-color: $red;
+            color: #fff;
+        }
+    }
+}
+
+.post-grid{
+    background-color: $color-bg-color;
+
+    .hentry{
+        padding: 2em 5%;
+        max-width: 500px;
+    }
+
 
     @media (min-width: 40em) {
         display: flex;
@@ -437,6 +439,7 @@ body.blog{
 
     .attachment-square{
         display: block;
+        margin-bottom: 0;
     }
 
 
@@ -486,38 +489,56 @@ body.blog{
 // Single
 .single-container {
 
-    .entry-header{
-        margin-bottom: 2em;
+    .hentry-container{
+
+        .entry-title {
+            font-size: 30 / 16 + 0em;
+            margin-bottom: 0.2em;
+        }
+
+        .hentry{
+            padding: 3em 5%;
+            max-width: 770 / 16 + 0em;
+            margin: 0 0 0 auto;
+        }
+        .entry-header{
+            margin-bottom: 2em;
+        }
+
+        .project-meta,
+        .project-offers-list{
+            font-size: 14 / 16 + 0em;
+        }
     }
 
-    .entry-title {
-        font-size: 30 / 16 + 0em;
-        margin-bottom: 0.2em;
-    }
-
-    .project-meta,
-    .project-offers-list{
-        font-size: 14 / 16 + 0em;
-    }
-
-    .hentry{
-        padding: 3em 5%;
-        max-width: 770 / 16 + 0em;
-        margin: 0 0 0 auto;
-    }
 
     @media (min-width: 40em) {
         display: flex;
 
         .hentry-container{
-            flex-basis: 70%;
+            flex-basis: 66%;
         }
         .site-sidebar{
-            flex-basis: 30%;
+            flex-basis: 33%;
         }
-        .hentry {
+        .hentry-container .hentry {
             padding: 3em 8%;
         }
+    }
+}
+
+.site-sidebar{
+    background-color: #f7f7f7;
+
+    .hentry {
+        padding: 1em 5%;
+    }
+
+    .related-post-title{
+        color: $font-dark;
+        text-transform: uppercase;
+        margin: 1.5em 5%;
+        font-size: 14 / 16 + 0em;
     }
 }
 
