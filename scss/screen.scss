@@ -379,6 +379,10 @@ html{
                 color: #fff;
             }
         }
+
+        @media (min-width: 40em) {
+            margin: 0;
+        }
     }
 }
 
@@ -394,6 +398,7 @@ html{
     @media (min-width: 40em) {
         display: flex;
         flex-wrap: wrap;
+        justify-content: flex-start;
 
         .hentry{
             flex-basis: 50%;
@@ -495,6 +500,8 @@ html{
 .single-container {
 
     .hentry-container{
+        max-width: 700 / 16 + 0em;
+        margin: 0 auto;
 
         .entry-title {
             font-size: 30 / 16 + 0em;
@@ -505,6 +512,12 @@ html{
             padding: 3em 5%;
             max-width: 770 / 16 + 0em;
             margin: 0 0 0 auto;
+
+            .entry-content{
+                text-transform: none;
+                font-size: 1em;
+                padding: 0;
+            }
         }
         .entry-header{
             margin-bottom: 2em;
@@ -515,10 +528,14 @@ html{
             font-size: 14 / 16 + 0em;
         }
     }
+    .post-grid{
+        background-color: transparent;
+    }
 
 
     @media (min-width: 40em) {
         display: flex;
+        flex-wrap: wrap;
 
         .hentry-container{
             flex-basis: 66%;
@@ -529,7 +546,20 @@ html{
         .hentry-container .hentry {
             padding: 3em 8%;
         }
+
+        .related-post{
+            flex-basis: 100%;
+        }
     }
+}
+
+.related-post-title{
+    font-size: 14 / 16 + 0em;
+    font-weight: 700;
+    text-align: center;
+    color: $font-dark;
+    text-transform: uppercase;
+    margin: 2em 5%;
 }
 
 .site-sidebar{
