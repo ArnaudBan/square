@@ -102,6 +102,29 @@ function ab_square_customize_register( $wp_customize ) {
         ) );
     }
 
+    $wp_customize->add_setting( 'telephone', array(
+        'type' => 'theme_mod', // or 'option'
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+
+    $wp_customize->add_control( 'telephone', array(
+        'type' => 'tel',
+        'section' => 'square_theme_options', // Required, core or custom.
+        'label' => __('Téléphone', 'square'),
+    ) );
+    $wp_customize->add_setting( 'Email', array(
+        'type' => 'theme_mod', // or 'option'
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_email',
+    ) );
+
+    $wp_customize->add_control( 'Email', array(
+        'type' => 'email',
+        'section' => 'square_theme_options', // Required, core or custom.
+        'label' => __('Email', 'square'),
+    ) );
+
     $wp_customize->add_section( 'square_theme_options', array(
         'title'         => __( 'Theme options', 'square' ),
         'capability'    => 'edit_theme_options',

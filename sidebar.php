@@ -13,7 +13,12 @@
 
     // Related news
     ?>
-    <h2 class="related-post-title"><?php _e('Related News', 'square'); ?></h2>
+    <h2 class="related-post-title sidebar-title">
+        <?php
+        'project' == $post_type ?
+            _e('Related News', 'square'):
+            _e('Related Projects', 'square'); ?>
+    </h2>
     <?php
     global $post;
     $topics = get_the_terms( $post, 'topic' );
@@ -47,6 +52,18 @@
 
 
         wp_reset_query();
+    }
+
+    $more = get_post_meta( get_the_ID(), 'project-more', true);
+
+    if( $more ){
+
+        $more_title = __('Learn More', 'square');
+
+        echo '<div class="sidebar-more">';
+        echo "<h2 class='sidebar-more-title sidebar-title'>{$more_title}</h2>";
+        echo $more;
+        echo '</div>';
     }
     ?>
 

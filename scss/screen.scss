@@ -25,6 +25,10 @@ img{
 
 a{
     color: $red;
+
+    &:hover{
+        text-decoration: none;
+    }
 }
 
 
@@ -370,6 +374,10 @@ html{
         &:hover {
             background-color: $red;
             color: #fff;
+
+            .project-offers-list{
+                color: #fff;
+            }
         }
     }
 }
@@ -445,9 +453,6 @@ html{
 
     .project-offers-list{
         transition: color 666ms;
-    }
-    .hentry:hover .project-offers-list{
-        color: #fff;
     }
 
     @media (min-width: 40em) {
@@ -529,16 +534,36 @@ html{
 
 .site-sidebar{
     background-color: #f7f7f7;
+    padding: 2em 0 0;
 
     .hentry {
         padding: 1em 5%;
     }
 
-    .related-post-title{
+    .sidebar-title{
         color: $font-dark;
         text-transform: uppercase;
-        margin: 1.5em 5%;
+        margin: 0 5% 1.5em;
         font-size: 14 / 16 + 0em;
+    }
+
+    > .wp-post-image{
+        margin: -2em 0 2em;
+    }
+}
+
+.sidebar-more{
+    background-color: $red;
+    padding: 2em 5% 1em;
+    color: #fff;
+
+    a{
+        color: currentColor;
+    }
+
+    .sidebar-more-title{
+        margin: 0 0 1em;
+        color: currentColor;
     }
 }
 
