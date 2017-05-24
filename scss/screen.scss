@@ -252,6 +252,123 @@ html{
 }
 
 
+// Home
+
+.front-page-header{
+
+    .archive-description-wrapper{
+        background-color: $color-bg-color;
+        color: $font-light;
+        font-weight: 300;
+
+        h2{
+            font-size: 24 / 16 + 0em;
+            color: $font-dark;
+            font-weight: 300;
+        }
+    }
+}
+
+.offer-grid{
+    text-transform: uppercase;
+    color: $font-dark;
+
+    .offer-title{
+        margin: 0 0 0.5em;
+        font-size: 14 / 16 + 0em;
+        font-weight: 700;
+    }
+
+    p{
+        font-size: 12 / 16 + 0em;
+
+    }
+
+    @media (min-width: 40em){
+        &.post-grid .hentry{
+            flex-basis: 33.33%;
+            min-height: 33.33vw;
+        }
+    }
+}
+
+.front-project-container.project-grid {
+
+    .archive-link,
+    .archive-title-wrapper{
+        background-color: $green;
+        color: #fff;
+    }
+
+    .archive-link{
+        display: block;
+        padding: 2em 5%;
+        text-decoration: none;
+
+        .archive-title{
+            font-size: 14 /16 + 0em;
+            font-weight: 300;
+            margin: 0;
+
+            &::before{
+                display: none;
+            }
+        }
+    }
+
+    @media (min-width: 62em) {
+        .archive-title,
+        .archive-link .archive-title{
+            margin-top: 62%;
+        }
+
+        .archive-link,
+        .archive-title-wrapper{
+            flex-basis: 33.33%;
+            box-sizing: border-box;
+        }
+
+        .hentry{
+            flex-basis: 66.66%;
+
+            &:nth-child(3n+3){
+                flex-direction: row;
+            }
+        }
+
+    }
+}
+
+.front-page-post-grid{
+
+    @media (min-width: 40em){
+        &.archive-page-header{
+
+            .archive-title-wrapper{
+                flex-basis: 100%;
+                min-height: 0;
+            }
+            .archive-title{
+                margin-top: 1em;
+            }
+        }
+    }
+
+    @media (min-width: 56em){
+        &.archive-page-header{
+
+            .archive-title-wrapper{
+                flex-basis: 33.33%;
+                min-height: 33.33vw;
+            }
+            .archive-title{
+                margin-top: 62%;
+            }
+        }
+    }
+
+}
+
 // Post/default grid
 .archive-page-header{
     color: #fff;
