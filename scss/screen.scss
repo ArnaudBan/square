@@ -71,6 +71,9 @@ html{
 }
 
 // Header
+.site-header{
+    background-color: $bg-color;
+}
 
 .site-branding,
 .contact-information{
@@ -102,10 +105,15 @@ html{
 }
 
 .header-image{
+    display: none;
 
     img{
         display: block;
         margin: 0 auto;
+    }
+
+    @media (min-width: 50em) {
+        display: block;
     }
 }
 
