@@ -11,47 +11,51 @@
     $size = 'project' == $post_type ? 'square' : 'large';
     the_post_thumbnail( $size);
 
-    // Related news
-    ?>
-    <h2 class="related-post-title sidebar-title">
-        <?php
-        'project' == $post_type ?
-            _e('Related News', 'square'):
-            _e('Related Projects', 'square'); ?>
-    </h2>
-    <?php
     global $post;
     $topics = get_the_terms( $post, 'topic' );
-    $topics_id = wp_list_pluck( $topics, 'term_id');
+    if( $topics && ! is_wp_error( $topics ) ){
 
-    $related_new_args = array(
-        'post_type'         => 'project' == $post_type ? 'post' : 'project',
-        'posts_per_page'    => 3,
-        'tax_query'         => array(
-            array(
+        $topics_id = wp_list_pluck( $topics, 'term_id');
+
+        $related_new_args = array(
+            'post_type'         => 'project' == $post_type ? 'post' : 'project',
+            'posts_per_page'    => 3,
+            'tax_query'         => array(
                 array(
-                    'taxonomy' => 'topic',
-                    'field'    => 'id',
-                    'terms'    => $topics_id,
-                ),
-            )
-        ),
-        'no_found_rows' => true
-    );
+                    array(
+                        'taxonomy' => 'topic',
+                        'field'    => 'id',
+                        'terms'    => $topics_id,
+                    ),
+                )
+            ),
+            'no_found_rows' => true
+        );
 
-    $related_new_query = new WP_Query( $related_new_args );
+        $related_new_query = new WP_Query( $related_new_args );
 
-    if( $related_new_query->have_posts() ){
+        if( $related_new_query->have_posts() ){
+
+            // Related news
+            ?>
+            <h2 class="related-post-title sidebar-title">
+                <?php
+                'project' == $post_type ?
+                    _e('Related News', 'square'):
+                    _e('Related Projects', 'square'); ?>
+            </h2>
+            <?php
 
 
-        while ( $related_new_query->have_posts() ){
-            $related_new_query->the_post();
+            while ( $related_new_query->have_posts() ){
+                $related_new_query->the_post();
 
-            get_template_part('parts/content', get_post_type() );
+                get_template_part('parts/content', get_post_type() );
+            }
+
+
+            wp_reset_query();
         }
-
-
-        wp_reset_query();
     }
 
     $more = get_post_meta( get_the_ID(), 'project-more', true);

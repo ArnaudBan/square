@@ -6,7 +6,7 @@ document.documentElement.classList.remove('no-js');
 // Load des font en Javascript
 WebFont.load({
     google: {
-        families: [ 'Roboto:300,400']
+        families: [ 'Roboto:300,400,700']
     },
     classes: false
 });

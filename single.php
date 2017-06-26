@@ -64,52 +64,56 @@ the_post();
 
     global $post;
     $topics = get_the_terms( $post, 'topic' );
-    $topics_id = wp_list_pluck( $topics, 'term_id');
 
-    $related_post_args = array(
-        'post_type'         => $post_type,
-        'posts_per_page'    => $nb_related_post,
-        'post__not_in'      => array( get_the_ID() ),
-        'tax_query'         => array(
-            array(
+    if( $topics && ! is_wp_error( $topics ) ){
+
+        $topics_id = wp_list_pluck( $topics, 'term_id');
+
+        $related_post_args = array(
+            'post_type'         => $post_type,
+            'posts_per_page'    => $nb_related_post,
+            'post__not_in'      => array( get_the_ID() ),
+            'tax_query'         => array(
                 array(
-                    'taxonomy' => 'topic',
-                    'field'    => 'id',
-                    'terms'    => $topics_id,
-                ),
-            )
-        ),
-        'no_found_rows' => true
-    );
+                    array(
+                        'taxonomy' => 'topic',
+                        'field'    => 'id',
+                        'terms'    => $topics_id,
+                    ),
+                )
+            ),
+            'no_found_rows' => true
+        );
 
-    $related_post_query = new WP_Query( $related_post_args );
+        $related_post_query = new WP_Query( $related_post_args );
 
-    if( $related_post_query->have_posts() ){
+        if( $related_post_query->have_posts() ){
 
-        ?>
+            ?>
 
-        <div class="related-post">
+            <div class="related-post">
 
-            <h2 class="related-post-title"><?php echo $related_post_title; ?></h2>
+                <h2 class="related-post-title"><?php echo $related_post_title; ?></h2>
 
-            <div class="<?php echo $archive_class; ?>">
+                <div class="<?php echo $archive_class; ?>">
 
-                <?php
+                    <?php
 
-                while ( $related_post_query->have_posts() ){
-                    $related_post_query->the_post();
+                    while ( $related_post_query->have_posts() ){
+                        $related_post_query->the_post();
 
-                    get_template_part('parts/content', get_post_type() );
-                }
+                        get_template_part('parts/content', get_post_type() );
+                    }
 
 
-                wp_reset_query();
-                ?>
+                    wp_reset_query();
+                    ?>
+                </div>
+
             </div>
 
-        </div>
-
-        <?php
+            <?php
+        }
     }
     ?>
 </div>

@@ -4,6 +4,18 @@
  */
 
 
+
+/**
+ * Include de tous les fichiers dans /inc
+ *
+ */
+
+foreach (glob( plugin_dir_path( __FILE__ ) . "/inc/*.php" ) as $filename){
+    require_once $filename;
+}
+
+
+
 add_action( 'after_setup_theme', 'ab_square_setup' );
 
 function ab_square_setup() {
