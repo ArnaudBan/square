@@ -51,6 +51,17 @@ function ab_square_setup() {
         'header-text' => array( 'site-title', 'site-description' ),
     ) );
 
+    add_theme_support( 'custom-header', array(
+        'default-image'          => '',
+        'width'                  => 630,
+        'height'                 => 400,
+        'flex-height'            => true,
+        'flex-width'             => true,
+        'uploads'                => true,
+        'random-default'         => false,
+        'header-text'            => false,
+    ) );
+
 
     // This theme uses wp_nav_menu() in two locations.
     register_nav_menus( array(
@@ -155,7 +166,7 @@ function ab_square_display_social_media(){
         $social_media_url = get_theme_mod( $social_media );
 
         if( $social_media_url ){
-            echo "<a href='{$social_media_url}' class='social-link'><svg class='icon icon-social'><use xlink:href='#{$social_media}'</svg></a>";
+            echo "<a href='{$social_media_url}' class='social-link'><svg class='icon icon-social'><use xlink:href='#{$social_media}'></use></svg></a>";
         }
 
     }

@@ -10,9 +10,18 @@
             </div><!-- .site-content -->
 
             <footer id="colophon" class="site-footer" role="contentinfo">
+                <div class="contact-information">
+                    <?php
+                    ab_square_display_social_media();
+
+                    $tel = get_theme_mod( 'telephone' );
+                    $email = get_theme_mod( 'Email' );
+                    echo "<p>$tel</p>";
+                    echo "<p>$email</p>";
+                    ?>
+                </div>
                 <?php
 
-                ab_square_display_social_media();
 
                 $logo = get_custom_logo();
 

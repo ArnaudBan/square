@@ -23,7 +23,7 @@ if( have_posts() ){
 }
 
 // Offres
-$offers = get_terms( array ( 'taxonomy' => 'offer') );
+$offers = get_terms( array ( 'taxonomy' => 'offer', 'hide_empty' => false) );
 echo '<div class="post-grid offer-grid">';
 foreach ( $offers as $offer ){
     echo '<div class="hentry">';

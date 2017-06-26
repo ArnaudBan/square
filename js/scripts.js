@@ -25,12 +25,12 @@ toggleMenuLink.addEventListener('click', function( e ){
 });
 
 // Ajout du sprite SVG
-var ajax = new XMLHttpRequest();
-ajax.open("GET", scripts_l10n.svgSpriteUrl, true);
-ajax.send();
-ajax.onload = function(e) {
+var squareSvgRequest = new XMLHttpRequest();
+squareSvgRequest.open("GET", scripts_l10n.svgSpriteUrl, true);
+squareSvgRequest.send();
+squareSvgRequest.onload = function(e) {
     var div = document.createElement("div");
     div.classList.add('screen-reader-text');
-    div.innerHTML = ajax.responseText;
+    div.innerHTML = squareSvgRequest.responseText;
     document.body.insertBefore(div, document.body.childNodes[0]);
 };

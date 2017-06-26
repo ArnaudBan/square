@@ -82,7 +82,6 @@ html{
 }
 
 .site-branding{
-    background-color: $bg-color;
 
     .site-title{
         margin: 0;
@@ -96,15 +95,30 @@ html{
     }
 
     .site-description{
-        font-size: 18 / 16 + 0em;
         text-transform: uppercase;
         color: $font-dark;
+        max-width: 270 / 16 + 0em;
+    }
+}
+
+.header-image{
+
+    img{
+        display: block;
+        margin: 0 auto;
     }
 }
 
 .contact-information{
     background-color: $green;
     color: #fff;
+
+    p{
+        font-size: 13 / 16 + 0em;
+        margin: 0;
+        text-transform: uppercase;
+        font-weight: 300;
+    }
 }
 
 @media (min-width: 50em) {
@@ -113,7 +127,11 @@ html{
         display: flex;
     }
     .site-branding{
-        flex-basis: 78%;
+        flex-basis: 22%;
+    }
+    .header-image{
+        padding: 1em;
+        flex-basis: 56%;
     }
     .contact-information{
         flex-basis: 22%;
@@ -229,6 +247,7 @@ html{
 
 .social-media-menu{
     font-size: 25 / 16 + 0em;
+    margin: 0 0 0.5em;
 
     .social-link{
         display: inline-block;
@@ -371,7 +390,6 @@ html{
 
 // Post/default grid
 .archive-page-header{
-    color: #fff;
 
     @media (min-width: 40em) {
         display: flex;
@@ -510,7 +528,6 @@ html{
 
     .hentry{
         padding: 2em 5%;
-        max-width: 500px;
     }
 
 
@@ -840,8 +857,23 @@ html{
 
 .site-footer{
     padding: 2em 5%;
-    text-align: right;
     background-color: $bg-color;
+    display: flex;
+    justify-content: space-between;
+
+    .contact-information{
+        background-color: transparent;
+        padding: 0;
+    }
+
+    p{
+        color: $font-light;
+    }
+
+    .custom-logo-link{
+        max-width: 100px;
+        margin-left: 0.5em;
+    }
 }
 
 .entry-content{

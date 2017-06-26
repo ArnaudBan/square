@@ -20,7 +20,7 @@
 <div id="page" class="hfeed site">
 
 
-    <header id="masthead" class="site-header" role="banner">
+    <header id="masthead" class="site-header" role="banner" >
 
         <?php
         wp_nav_menu(array(
@@ -60,8 +60,26 @@
             ?>
         </div>
 
+        <?php
+        $header_img = get_header_image();
+        if( $header_img ){
+            ?>
+            <div class="header-image">
+                <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+            </div>
+            <?php
+        }
+        ?>
+
         <div class="contact-information">
-            <?php ab_square_display_social_media(); ?>
+            <?php
+            ab_square_display_social_media();
+
+            $tel = get_theme_mod( 'telephone' );
+            $email = get_theme_mod( 'Email' );
+            echo "<p>$tel</p>";
+            echo "<p>$email</p>";
+            ?>
         </div>
 
         <a class="menu-toggle" href="#top-menu">
